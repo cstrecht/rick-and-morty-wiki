@@ -38,8 +38,8 @@ function Navbar() {
             </div>
             <input
               type="text"
-              placeholder="search..."
-              className="w-24 bg-black border-b text-neon-green p-1 pl-10 font-light sm:w-60  lg:w-48"
+              placeholder="SEARCH..."
+              className="w-24 bg-black uppercase text-neon-green p-1 pl-10 font-light sm:w-60  lg:w-48"
             />
           </div>
         </div>
