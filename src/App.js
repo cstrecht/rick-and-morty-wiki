@@ -10,7 +10,7 @@ import Search from "./components/Search/Search";
 
 function App() {
   return (
-    <div>
+    <div className="text-neon-green">
       <Navbar />
       hello
     </div>
