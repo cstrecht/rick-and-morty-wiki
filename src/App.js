@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import Card from "./components/Card/Card";
 // import Filters from "./components/Filters/Filters";
 import Navbar from "./components/Navbar/Navbar";
-// import Pagintion from "./components/Pagination/Pagination";
+import Pagination from "./components/Pagination/Pagination";
 import Search from "./components/Search/Search";
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
     <div>
       <Navbar setPage={setPage} setSearch={setSearch} />
       <Card results={results} />
+      <Pagination info={info} page={page} setPage={setPage} />
     </div>
   );
 }
