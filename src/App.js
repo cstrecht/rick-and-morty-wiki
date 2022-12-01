@@ -3,19 +3,23 @@ import React, { useState, useEffect } from "react";
 
 // -- React Components: --
 import Card from "./components/Card/Card";
-// import Filters from "./components/Filters/Filters";
+import Filter from "./components/Filters/Filter";
 import Navbar from "./components/Navbar/Navbar";
 import Pagination from "./components/Pagination/Pagination";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
-  //Search feature:
+  // -- Search feature: --
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
 
-  // -- Request data from the API --
+  // Filters:
+  const [gender, setGender] = useState("");
+  const [species, setSpecies] = useState("");
+  const [status, setStatus] = useState("");
 
-  const API_URL = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}`;
+  // -- Request data from the API --
+  const API_URL = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
   const [data, updateData] = useState([]);
 
   var { info, results } = data; //destructuring the info and results (comes with the api response) from the data! :D
@@ -32,6 +36,14 @@ function App() {
   return (
     <div>
       <Navbar setPage={setPage} setSearch={setSearch} />
+      <Filter
+        page={page}
+        status={status}
+        setStatus={setStatus}
+        setGender={setGender}
+        setSpecies={setSpecies}
+        setPage={setPage}
+      />
       <Card results={results} />
       <Pagination info={info} page={page} setPage={setPage} />
     </div>

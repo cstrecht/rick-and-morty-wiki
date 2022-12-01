@@ -1,9 +1,13 @@
+import React, { useState } from "react";
 import Search from "../Search/Search";
 import logo from "../../assets/logo.png";
 import Sidebar from "../Sidebar/Sidebar";
 
 function Navbar({ setPage, setSearch }) {
+  const [showSidebar, setShowSidebar] = useState(false);
+
   function refreshPage() {
+    setPage(1);
     window.location.reload(false);
   }
   return (
@@ -28,7 +32,11 @@ function Navbar({ setPage, setSearch }) {
           <div className="text-neon-green mx-12 pt-1 px-2 hover:bg-neon-green hover:text-black hover:cursor-pointer">
             About
           </div>
-          <Sidebar />
+          <Sidebar
+            showSidebar={showSidebar}
+            setShowSidebar={setShowSidebar}
+            onClick={() => setShowSidebar(!showSidebar)}
+          />
           <Search setPage={setPage} setSearch={setSearch} />
         </div>
       </div>

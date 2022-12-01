@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 
-const Sidebar = () => {
+const Sidebar = ({
+  page,
+  status,
+  setStatus,
+  setGender,
+  setSpecies,
+  setPage,
+}) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   return (
@@ -32,11 +39,6 @@ const Sidebar = () => {
         }`}
       >
         {/* Sidebar content here below: */}
-        <div className="opacity-100">
-          <h2 className="mt-20 text-4xl font-semibold text-eletric-green">
-            I am a sidebar
-          </h2>
-        </div>
 
         <button
           className="flex text-4xl text-neon-green items-center cursor-pointer fixed right-10 top-6 z-50"
