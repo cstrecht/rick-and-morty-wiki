@@ -1,6 +1,6 @@
 import React from "react";
 
-function Search() {
+function Search({ setPage, setSearch }) {
   return (
     <div className="relative block">
       <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 pb-0">
@@ -19,8 +19,12 @@ function Search() {
         </svg>
       </div>
       <input
+        onChange={(e) => {
+          setPage(1);
+          setSearch(e.target.value);
+        }}
         type="text"
-        placeholder="SEARCH..."
+        placeholder="SEARCH"
         className="w-24 bg-black uppercase text-neon-green p-1 pl-10 font-light sm:w-60  lg:w-48"
       />
     </div>

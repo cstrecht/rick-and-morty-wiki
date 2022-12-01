@@ -1,7 +1,7 @@
 import Search from "../Search/Search";
 import logo from "../../assets/logo.png";
 
-function Navbar() {
+function Navbar({ setPage, setSearch }) {
   return (
     <nav className="border-gray-200 bg-black sticky top-0 z-50 mb-4 px-2 py-2.5 shadow-xl sm:px-4">
       <div className="container mx-auto flex flex-col flex-wrap items-center justify-between">
@@ -20,7 +20,7 @@ function Navbar() {
           <div className="text-neon-green mx-12 pt-1 px-2 hover:bg-neon-green hover:text-black hover:cursor-pointer">
             Episodes
           </div>
-          <Search />
+          <Search setPage={setPage} setSearch={setSearch} />
         </div>
       </div>
     </nav>

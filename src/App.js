@@ -6,11 +6,15 @@ import Card from "./components/Card/Card";
 // import Filters from "./components/Filters/Filters";
 import Navbar from "./components/Navbar/Navbar";
 // import Pagintion from "./components/Pagination/Pagination";
-// import Search from "./components/Search/Search";
+import Search from "./components/Search/Search";
 
 function App() {
+  //Search feature:
+  const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
   // -- Request data from the API --
-  const API_URL = `https://rickandmortyapi.com/api/character/?page=1`; // only page 1 = 20 characters
+
+  const API_URL = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}`;
   const [data, updateData] = useState([]);
 
   var { info, results } = data; //destructuring the info and results (comes with the api response) from the data! :D
@@ -26,7 +30,7 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar setPage={setPage} setSearch={setSearch} />
       <Card results={results} />
     </div>
   );

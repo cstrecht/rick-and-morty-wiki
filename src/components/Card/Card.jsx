@@ -15,7 +15,12 @@ const Card = ({ results }) => {
             <div className="px-2 pt-2 pb-3 text-xl uppercase">{name}</div>
             <div className="px-2 pb-2">
               <span className="inline-block text-xs font-semibold text-gray-700">
-                STATUS: {status}
+                STATUS:{" "}
+                {status === "Dead" ? (
+                  <span className="line-through">{status}</span>
+                ) : (
+                  <span className="no-underline">{status}</span>
+                )}
               </span>
               <span className="inline-block text-xs font-semibold text-gray-700">
                 SPECIES: {species}
