@@ -6,12 +6,13 @@ import Card from "./components/Card/Card";
 // import Filters from "./components/Filters/Filters";
 import Navbar from "./components/Navbar/Navbar";
 import Pagination from "./components/Pagination/Pagination";
-import Search from "./components/Search/Search";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   //Search feature:
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
+
   // -- Request data from the API --
 
   const API_URL = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}`;
