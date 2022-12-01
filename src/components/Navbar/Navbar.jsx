@@ -1,4 +1,3 @@
-import react from "react";
 import Search from "../Search/Search";
 import logo from "../../assets/logo.png";
 

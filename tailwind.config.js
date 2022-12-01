@@ -6,6 +6,8 @@ module.exports = {
       "neon-green": "#B2DF28",
       "neon-blue": "#00B5CC",
       "neon-purple": "#DF00FF",
+      "dark-green": "#091a04",
+      "eletric-green": "#5fe03f",
       black: "#000000",
     },
     extend: {
