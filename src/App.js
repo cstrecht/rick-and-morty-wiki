@@ -1,52 +1,32 @@
-import "./App.css";
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
 
 // -- React Components: --
-import Card from "./components/Card/Card";
-import Filter from "./components/Filters/Filter";
 import Navbar from "./components/Navbar/Navbar";
-import Pagination from "./components/Pagination/Pagination";
+import Episodes from "./pages/Episodes";
+import Location from "./pages/Location";
+import About from "./pages/About";
+import Characters from "./pages/Characters";
 
 function App() {
-  // -- Search feature: --
-  const [page, setPage] = useState(1);
-  const [search, setSearch] = useState("");
-
-  // Filters:
-  const [gender, setGender] = useState("");
-  const [species, setSpecies] = useState("");
-  const [status, setStatus] = useState("");
-
-  // -- Request data from the API --
-  const API_URL = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
-  const [data, updateData] = useState([]);
-
-  var { info, results } = data; //destructuring the info and results (comes with the api response) from the data! :D
-  // The "data" variable will store the data from the API. "updateData" will change that data everytime we want.
-
-  useEffect(() => {
-    (async function () {
-      var data = await fetch(API_URL).then((response) => response.json());
-      updateData(data);
-    })();
-  }, [API_URL]);
-
   return (
-    <div>
-      <Navbar setPage={setPage} setSearch={setSearch} />
-      <Filter
-        page={page}
-        status={status}
-        species={species}
-        setStatus={setStatus}
-        setGender={setGender}
-        setSpecies={setSpecies}
-        setPage={setPage}
-      />
-      <Card results={results} />
-      <Pagination info={info} page={page} setPage={setPage} />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+      </div>
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/characters" element={<Characters />} />
+        <Route path="/episodes" element={<Episodes />} />
+        <Route path="/locations" element={<Location />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 
+const Hero = () => {
+  return <div>hero page</div>;
+};
 export default App;
