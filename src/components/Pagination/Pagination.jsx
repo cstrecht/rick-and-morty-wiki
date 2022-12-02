@@ -1,7 +1,7 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
 
-const Pagination = ({ page, info, setPage }) => {
+const Pagination = ({ page, info, setPage, data }) => {
   let pageChange = (data) => {
     setPage(data.selected + 1);
   };

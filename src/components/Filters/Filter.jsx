@@ -15,7 +15,7 @@ const Filter = ({
 }) => {
   return (
     <div className="text-eletric-green  font-share-tech">
-      <h1 className="text-sm pl-5">Filters characters by:</h1>
+      <h1 className="text-sm pl-5">Filter characters by:</h1>
       <div>
         {/* Category components will be placed here */}
         <Status

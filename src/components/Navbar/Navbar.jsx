@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 // import Search from "../Search/Search";
 import logo from "../../assets/logo.png";
 // import Sidebar from "../Sidebar/Sidebar";
@@ -28,7 +28,7 @@ function Navbar({ setPage, setSearch }) {
   return (
     <nav
       id="navbar"
-      className="transition-all border-gray-200 bg-black sticky top-0 z-50 mb-4 px-2 py-2.5 shadow-xl sm:px-4"
+      className="transition-all w-full border-gray-200 bg-black top-0 z-50 mb-4 px-2 py-2.5 shadow-xl sm:px-4"
     >
       <div className="container mx-auto flex flex-col flex-wrap items-center justify-between">
         <Link to="/">
@@ -52,12 +52,7 @@ function Navbar({ setPage, setSearch }) {
           >
             Characters
           </Link>
-          <Link
-            to="/locations"
-            className="text-neon-green mx-12 pt-1 px-2 hover:bg-neon-green hover:text-black hover:cursor-pointer"
-          >
-            Locations
-          </Link>
+
           <Link
             to="/episodes"
             className="text-neon-green mx-12 pt-1 px-2 hover:bg-neon-green hover:text-black hover:cursor-pointer"

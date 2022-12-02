@@ -17,7 +17,7 @@ const Sidebar = ({
 
   //destructuring the info and results (comes with the api response) from the data! :D
   // The "data" variable will store the data from the API. "updateData" will change that data everytime we want.
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     (async function () {
@@ -65,7 +65,7 @@ const Sidebar = ({
         />
 
         <button
-          className="flex text-4xl text-neon-green items-center cursor-pointer fixed right-10 top-6 z-50"
+          className="flex text-4xl text-neon-green items-center cursor-pointer fixed right-10 top-6 z-40"
           onClick={() => setShowSidebar(!showSidebar)}
         >
           <svg
