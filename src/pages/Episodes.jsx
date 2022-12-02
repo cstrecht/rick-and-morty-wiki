@@ -19,22 +19,27 @@ const Episodes = ({ info }) => {
     getEpisodes();
   }, [api]);
 
+  const handleClick = () => {
+    window.location.reload();
+  };
   return (
     <>
-      <table className="table-auto text-neon-green font-share-tech">
+      <table className="table-auto mx-auto mt-12 text-neon-green font-share-tech border-spacing-4">
         <thead className="bg-neon-blue ">
           <tr>
-            <th>Ep. Number</th>
-            <th>Name</th>
-            <th>Air date</th>
+            <th className="px-24 uppercase">Episode Number</th>
+            <th className="px-24 uppercase">Name</th>
+            <th className="px-24 uppercase">Air date</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="gap-x-8">
           {episodes.map((episode, index) => (
             <tr total={51}>
-              <td className="table-data">{episode.id}</td>
-              <td className="table-data">{episode.name}</td>
-              <td className="table-data">{episode.air_date}</td>
+              <td className="table-data text-center">{episode.id}</td>
+              <td className="table-data text-center hover:underline">
+                {episode.name}
+              </td>
+              <td className="table-data text-center">{episode.air_date}</td>
             </tr>
           ))}
         </tbody>
