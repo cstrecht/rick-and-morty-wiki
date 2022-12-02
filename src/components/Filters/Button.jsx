@@ -3,14 +3,13 @@ import React from "react";
 const Button = ({ input, task, setPage, index, name }) => {
   return (
     <>
-      <button className="text-eletric-green">filter button</button>
       <input type="button" name={name} id={`${name}-${index}`} />
       <label
         onClick={() => {
           task(input);
           setPage(1);
         }}
-        className="bg-neon-green text-neon-purple"
+        className="mr-4 px-4 text-xs text-eletric-green hover:cursor-pointer border border-eletric-green active:text-black hover:bg-neon-blue hover:text-black"
         for={`${name}-${index}`}
       >
         {input}

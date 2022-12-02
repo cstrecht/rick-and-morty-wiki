@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Filter from "../Filters/Filter";
 
 const Sidebar = ({
   page,
-  status,
-  setStatus,
-  setGender,
-  setSpecies,
+
   setPage,
 }) => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const [gender, setGender] = useState("");
+  const [species, setSpecies] = useState("");
+  const [status, setStatus] = useState("");
+  const [search, setSearch] = useState("");
+
+  const API_URL = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
+  const [data, updateData] = useState([]);
+
+  //destructuring the info and results (comes with the api response) from the data! :D
+  // The "data" variable will store the data from the API. "updateData" will change that data everytime we want.
+  console.log(data);
+
+  useEffect(() => {
+    (async function () {
+      var data = await fetch(API_URL).then((response) => response.json());
+      updateData(data);
+    })();
+  }, [API_URL]);
 
   return (
     <>
@@ -39,6 +55,14 @@ const Sidebar = ({
         }`}
       >
         {/* Sidebar content here below: */}
+        <Filter
+          page={page}
+          status={status}
+          setStatus={setStatus}
+          setGender={setGender}
+          setSpecies={setSpecies}
+          setPage={setPage}
+        />
 
         <button
           className="flex text-4xl text-neon-green items-center cursor-pointer fixed right-10 top-6 z-50"
