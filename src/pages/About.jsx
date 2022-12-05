@@ -1,6 +1,6 @@
 import React from "react";
 
 const About = () => {
-  return <>oi</>;
+  return <div className="text-eletric-green">about</div>;
 };
 export default About;

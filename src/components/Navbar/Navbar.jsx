@@ -33,7 +33,7 @@ function Navbar({ setPage, setSearch }) {
       <div className="container mx-auto flex flex-col flex-wrap items-center justify-between">
         <Link to="/">
           <img
-            className="h-32 pb-4 object-fill hover:cursor-pointer"
+            className="h-24 pb-4 object-fill hover:cursor-pointer"
             src={logo}
             alt="Rick and Morty Logo"
             onClick={refreshPage}

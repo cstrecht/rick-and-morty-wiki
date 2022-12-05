@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Episodes from "./pages/Episodes";
 import About from "./pages/About";
 import Characters from "./pages/Characters";
+import Hero from "./pages/Hero";
 
 function App() {
   return (
@@ -25,7 +26,4 @@ function App() {
   );
 }
 
-const Hero = () => {
-  return <div>hero page</div>;
-};
 export default App;
