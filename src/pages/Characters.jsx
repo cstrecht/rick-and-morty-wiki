@@ -42,7 +42,7 @@ const Characters = () => {
         setSpecies={setSpecies}
         setPage={setPage}
       />
-      <Card results={results} />
+      <Card page="/characters" results={results} />
       <Pagination info={info} page={page} setPage={setPage} />
     </div>
   );

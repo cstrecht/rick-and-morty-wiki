@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-// import Pagination from "../components/Pagination/Pagination";
+//import Pagination from "../components/Pagination/Pagination"; FIX THIS LATER, not working properly :(
+import { Link } from "react-router-dom";
 
-const Episodes = ({ info }) => {
+const Episodes = ({ page, setPage, info, id }) => {
   const [episodes, setEpisodes] = useState([]);
-  // const [page, setPage] = useState(1);
-
-  const api = `https://rickandmortyapi.com/api/episode`;
+  const api = `https://rickandmortyapi.com/api/episode?page=${page}`;
 
   useEffect(() => {
     const getEpisodes = async () => {
@@ -13,39 +12,31 @@ const Episodes = ({ info }) => {
       const data = await response.json();
 
       setEpisodes(data.results);
-      console.log(data.results);
+      //console.log(data.results);
     };
 
     getEpisodes();
   }, [api]);
 
-  const handleClick = () => {
-    window.location.reload();
-  };
   return (
-    <>
-      <table className="table-auto mx-auto mt-12 text-neon-green font-share-tech border-spacing-4">
-        <thead className="bg-neon-blue ">
-          <tr>
-            <th className="px-24 uppercase">Episode Number</th>
-            <th className="px-24 uppercase">Name</th>
-            <th className="px-24 uppercase">Air date</th>
-          </tr>
-        </thead>
-        <tbody className="gap-x-8">
-          {episodes.map((episode, index) => (
-            <tr total={51}>
-              <td className="table-data text-center">{episode.id}</td>
-              <td className="table-data text-center hover:underline">
-                {episode.name}
-              </td>
-              <td className="table-data text-center">{episode.air_date}</td>
-            </tr>
-          ))}
-        </tbody>
-        {/* <Pagination data={data.results} page={page} setPage={setPage} /> */}
-      </table>
-    </>
+    <div>
+      {episodes.map((episode, key) => (
+        <Link to={`${episode.id}`}>
+          <div className="text-eletric-green flex font-share-tech">
+            <div key={episode.id} className="table-data text-center">
+              {episode.id}
+            </div>
+            <div key={episode.name} className="table-data text-center">
+              {episode.name}
+            </div>
+            <div key={episode.air_date} className="table-data text-center">
+              {episode.air_date}
+            </div>
+          </div>
+        </Link>
+      ))}
+      {/* <Pagination info={info} page={page} setPage={setPage} /> */}
+    </div>
   );
 };
 export default Episodes;
