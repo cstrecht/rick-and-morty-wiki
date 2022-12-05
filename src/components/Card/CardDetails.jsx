@@ -5,9 +5,21 @@ const CardDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [fetchData, setFetchData] = useState([]);
-  const { name, location, origin, gender, image, status, species } = fetchData;
+  const {
+    name,
+    location,
+    origin,
+    gender,
+    image,
+    status,
+    species,
+    type,
+    created,
+    episode,
+  } = fetchData;
 
   const api = `https://rickandmortyapi.com/api/character/${id}`;
+  console.log(episode);
 
   //fetch data from API:
   useEffect(() => {
@@ -21,13 +33,17 @@ const CardDetails = () => {
     <div className="text-eletric-green">
       <button onClick={() => navigate(-1)}>go back</button>
       <div>hello character</div>
-      <h1>{name}</h1>
+      <h1>name: {name}</h1>
       <img src={image} alt="character face" />
-      <p>{gender}</p>
-      <p>{location?.name}</p>
-      <p>{origin?.name}</p>
-      <p>{status}</p>
-      <p>{species}</p>
+      <p>gender: {gender}</p>
+      <p>location: {location?.name}</p>
+      <p>origin: {origin?.name}</p>
+      <p>status: {status}</p>
+      <p>species: {species}</p>
+      <p>subspecies: {type ? type : "No subspecies"}</p>
+      <p>Episodes participated: </p>
+      <p>created at: {created}</p>
+      {/* Episodes participated with links here */}
     </div>
   );
 };

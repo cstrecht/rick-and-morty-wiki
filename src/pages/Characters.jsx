@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
+import Pagination from "../components/Pagination/Pagination";
 
 import Card from "../components/Card/Card";
 import Filter from "../components/Filters/Filter";
-import Pagination from "../components/Pagination/Pagination";
 import Search from "../components/Search/Search";
 
 const Characters = () => {
@@ -17,7 +17,7 @@ const Characters = () => {
   const [status, setStatus] = useState("");
 
   // -- Request data from the API --
-  const API_URL = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
+  const api = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
   const [data, updateData] = useState([]);
 
   var { info, results } = data; //destructuring the info and results (comes with the api response) from the data! :D
@@ -25,10 +25,10 @@ const Characters = () => {
 
   useEffect(() => {
     (async function () {
-      var data = await fetch(API_URL).then((response) => response.json());
+      var data = await fetch(api).then((response) => response.json());
       updateData(data);
     })();
-  }, [API_URL]);
+  }, [api]);
 
   return (
     <div>

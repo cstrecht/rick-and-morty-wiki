@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const EpisodeDetails = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [fetchData, setFetchData] = useState([]);
-  const { name, air_date, episode, created } = fetchData; //falta o array das characters
+  const { name, air_date, episode, created, characters } = fetchData; //falta o array das characters
 
   const api = `https://rickandmortyapi.com/api/episode/${id}`;
 
@@ -17,11 +18,13 @@ const EpisodeDetails = () => {
 
   return (
     <div className="text-eletric-green">
+      <button onClick={() => navigate(-1)}>go back</button>
       <div>hello episode</div>
-      <div>{name}</div>
-      <div>{air_date}</div>
-      <div>{episode}</div>
-      <div>{created}</div>
+      <div>Episode number {id}</div>
+      <div>name: {name}</div>
+      <div>Air dated: {air_date}</div>
+      <div>Episode: {episode}</div>
+      <div>Created: {created}</div>
     </div>
   );
 };
