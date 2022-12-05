@@ -25,6 +25,7 @@ const EpisodeDetails = () => {
       <div>Air dated: {air_date}</div>
       <div>Episode: {episode}</div>
       <div>Created: {created}</div>
+      {/* Characters participated here with links */}
     </div>
   );
 };
