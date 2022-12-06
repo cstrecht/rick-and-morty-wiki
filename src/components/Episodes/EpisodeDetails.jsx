@@ -25,7 +25,7 @@ const EpisodeDetails = () => {
         ← go back
       </button>
 
-      <div className="mx-auto text-eletric-green bg-neon-blue bg-opacity-40 w-fit rounded-xl border-8 border-neon-green mt-3">
+      <div className="mx-auto max-w-xl  text-eletric-green bg-neon-blue bg-opacity-40 rounded-xl border-8 border-neon-green mt-3">
         <div className="bg-neon-green text-center text-4xl p-5 text-black">
           {name + " - Episode " + id}
         </div>
@@ -34,7 +34,7 @@ const EpisodeDetails = () => {
             Air dated: <span className="text-neon-green">{air_date}</span>
           </div>
           <div>
-            Episode reference:{" "}
+            Episode reference:
             <span className="text-neon-green">{episode}</span>
           </div>
           <div>

@@ -14,10 +14,8 @@ const Filter = ({
   setSpecies,
 }) => {
   return (
-    <div className="text-eletric-green  font-share-tech">
-      <h1 className="text-sm pl-5">Filter characters by:</h1>
+    <div className="text-neon-green pl-5 mt-2 font-share-tech">
       <div>
-        {/* Category components will be placed here */}
         <Status
           page={page}
           status={status}

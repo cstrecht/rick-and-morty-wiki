@@ -6,8 +6,8 @@ const Status = ({ page, setStatus, setPage }) => {
   return (
     <>
       <div className="pl-5">
-        <div className="text-eletric-green text-sm">Status:</div>
-        <div className="">
+        <p>Status:</p>
+        <div>
           {status.map((item, index) => (
             <Button
               key={index}

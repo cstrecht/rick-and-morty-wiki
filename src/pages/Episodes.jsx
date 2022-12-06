@@ -19,19 +19,14 @@ const Episodes = ({ page, setPage, info, id }) => {
   }, [api]);
 
   return (
-    <div>
+    <div className="pl-12 pt-8 text-lg w-fit text-eletric-green font-share-tech">
       {episodes.map((episode, key) => (
         <Link to={`${episode.id}`}>
-          <div className="text-eletric-green flex font-share-tech">
-            <div key={episode.id} className="table-data text-center">
-              {episode.id}
-            </div>
-            <div key={episode.name} className="table-data text-center">
-              {episode.name}
-            </div>
-            <div key={episode.air_date} className="table-data text-center">
-              {episode.air_date}
-            </div>
+          <div className="flex pb-3 hover:text-neon-blue">
+            <span className="bg-neon-blue bg-opacity-30 px-3">
+              Episode {episode.id}
+            </span>{" "}
+            - {episode.name} ({episode.air_date})
           </div>
         </Link>
       ))}

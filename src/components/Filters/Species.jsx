@@ -17,7 +17,7 @@ const Status = ({ page, setSpecies, setPage }) => {
   return (
     <>
       <div className="pl-5">
-        <div className="text-eletric-green text-sm">Species:</div>
+        <p>Species:</p>
         <div className="">
           {species.map((item, index) => (
             <Button

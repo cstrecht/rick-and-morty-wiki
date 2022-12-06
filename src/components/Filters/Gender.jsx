@@ -6,7 +6,7 @@ const Status = ({ page, setGender, setPage }) => {
   return (
     <>
       <div className="pl-5">
-        <div className="text-eletric-green text-sm">Gender:</div>
+        <p>Gender:</p>
         <div className="">
           {gender.map((item, index) => (
             <Button
