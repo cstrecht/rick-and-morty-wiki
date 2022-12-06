@@ -19,7 +19,7 @@ const Episodes = ({ page, setPage, info, id }) => {
   }, [api]);
 
   return (
-    <div className="pl-12 pt-8 text-lg w-fit text-eletric-green font-share-tech">
+    <div className="pt-12 px-20 text-lg w-fit text-eletric-green font-share-tech">
       {episodes.map((episode, key) => (
         <Link to={`${episode.id}`}>
           <div className="flex pb-3 hover:text-neon-blue">

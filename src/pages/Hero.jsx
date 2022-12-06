@@ -14,8 +14,8 @@ const Hero = () => {
         src={hero}
         alt="Green portal"
       />
-      <div className="text-eletric-green font-share-tech uppercase text-2xl text-center -mt-24">
-        The Rick and Morty Wikipedia
+      <div className="text-eletric-green font-share-tech uppercase text-xl text-center -mt-20">
+        Welcome to the Rick and Morty Wikipedia
       </div>
     </div>
   );

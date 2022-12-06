@@ -38,7 +38,7 @@ const Card = ({ page, results }) => {
   } else {
     display = (
       <div className="text-neon-blue text-center font-share-tech">
-        Oops! No characters found.
+        Oops! No characters were found.
       </div>
     );
   }
