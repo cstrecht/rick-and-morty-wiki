@@ -9,8 +9,12 @@ const Hero = () => {
         Wubba lubba dub-dub!
       </div>
 
-      <img className="h-[550px] mx-auto -mt-20" src={hero} alt="Green portal" />
-      <div className="text-eletric-green font-share-tech uppercase text-2xl text-center -mt-12">
+      <img
+        className="h-[550px] mx-auto -mt-20 animate-wiggle"
+        src={hero}
+        alt="Green portal"
+      />
+      <div className="text-eletric-green font-share-tech uppercase text-2xl text-center -mt-24">
         The Rick and Morty Wikipedia
       </div>
     </div>

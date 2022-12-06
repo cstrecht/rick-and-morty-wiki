@@ -17,15 +17,35 @@ const EpisodeDetails = () => {
   }, [api]);
 
   return (
-    <div className="text-eletric-green">
-      <button onClick={() => navigate(-1)}>go back</button>
-      <div>hello episode</div>
-      <div>Episode number {id}</div>
-      <div>name: {name}</div>
-      <div>Air dated: {air_date}</div>
-      <div>Episode: {episode}</div>
-      <div>Created: {created}</div>
-      {/* Characters participated here with links */}
+    <div className="font-share-tech py-4 px-8 overflow-hidden">
+      <button
+        onClick={() => navigate(-1)}
+        className="bg-dark-green border border-neon-green text-neon-green text-md font-share-tech rounded-md py-1 px-2 uppercase active:text-white hover:cursor-pointer hover:underline"
+      >
+        ← go back
+      </button>
+
+      <div className="mx-auto text-eletric-green bg-neon-blue bg-opacity-40 w-fit rounded-xl border-8 border-neon-green mt-3">
+        <div className="bg-neon-green text-center text-4xl p-5 text-black">
+          {name + " - Episode " + id}
+        </div>
+        <div className="p-6 tracking-wide text-xl text-neon-blue">
+          <div>
+            Air dated: <span className="text-neon-green">{air_date}</span>
+          </div>
+          <div>
+            Episode reference:{" "}
+            <span className="text-neon-green">{episode}</span>
+          </div>
+          <div>
+            Created at <span className="text-neon-green">{created}</span>
+          </div>
+          <div>
+            Participating characters:
+            {/* <span className="text-neon-green">{characters[id]}</span> */}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

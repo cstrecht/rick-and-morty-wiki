@@ -15,6 +15,19 @@ module.exports = {
       fontFamily: {
         "share-tech": ["Share Tech Mono", "monospace"],
       },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": {
+            transform: "rotate(-2deg)",
+          },
+          "50%": {
+            transform: "rotate(2deg)",
+          },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 1.5s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

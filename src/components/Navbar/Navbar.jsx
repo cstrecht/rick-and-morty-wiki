@@ -41,12 +41,6 @@ function Navbar({ setPage, setSearch }) {
         </Link>
         <div className="flex tracking-wide font-share-tech uppercase">
           <Link
-            to="/"
-            className="text-neon-green mx-12 pt-1 px-2 hover:bg-neon-green hover:text-black hover:cursor-pointer"
-          >
-            Home
-          </Link>
-          <Link
             to="/characters"
             className="text-neon-green mx-12 pt-1 px-2 hover:bg-neon-green hover:text-black hover:cursor-pointer"
           >
