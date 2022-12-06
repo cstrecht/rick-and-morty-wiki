@@ -56,7 +56,7 @@ const CardDetails = () => {
               From: <span className="text-neon-green">{location?.name}</span>
             </p>
             <p>
-              Origin:{" "}
+              Origin:
               <span className="text-neon-green">
                 {origin?.name === "unknown" ? "Unknown" : origin?.name}
               </span>
@@ -68,9 +68,8 @@ const CardDetails = () => {
               Species: <span className="text-neon-green">{species}</span>
             </p>
             <p>
-              Subspecies:{" "}
+              Subspecies:
               <span className="text-neon-green">
-                {" "}
                 {type ? type : "No subspecies"}
               </span>
             </p>
@@ -81,9 +80,8 @@ const CardDetails = () => {
             <p>
               Episodes participated:
               <span className="text-neon-green">
-                {" "}
                 {/* Episodes participated with links here */}
-              </span>{" "}
+              </span>
             </p>
           </div>
         </div>

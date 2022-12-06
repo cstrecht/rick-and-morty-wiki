@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-//import Pagination from "../components/Pagination/Pagination"; FIX THIS LATER, not working properly :(
 import { Link } from "react-router-dom";
+//import Pagination from "../components/Pagination/Pagination"; FIX THIS LATER, not working properly :(
 
 const Episodes = ({ page, setPage, info, id }) => {
   const [episodes, setEpisodes] = useState([]);

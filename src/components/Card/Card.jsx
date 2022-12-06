@@ -36,7 +36,11 @@ const Card = ({ page, results }) => {
       );
     });
   } else {
-    display = "No characters";
+    display = (
+      <div className="text-neon-blue text-center font-share-tech">
+        Oops! No characters found.
+      </div>
+    );
   }
 
   return (

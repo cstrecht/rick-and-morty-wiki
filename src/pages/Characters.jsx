@@ -26,23 +26,24 @@ const Characters = () => {
 
   // -- Request data from the API --
   const api = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
-  const [data, updateData] = useState([]);
+  const [characters, setCharacters] = useState([]);
 
-  var { info, results } = data; //destructuring the info and results (comes with the api response) from the data! :D
+  var { info, results } = characters; //destructuring the info and results (comes with the api response) from the data! :D
   // The "data" variable will store the data from the API. "updateData" will change that data everytime we want.
 
   useEffect(() => {
-    (async function () {
-      var data = await fetch(api).then((response) => response.json());
-      updateData(data);
-    })();
+    const getCharacters = async () => {
+      const response = await fetch(api).then((response) => response.json());
+      setCharacters(response);
+    };
+    getCharacters();
   }, [api]);
 
   return (
     <div>
       <div className="flex">
         <button
-          class="bg-dark-green border border-neon-green text-neon-green text-md font-share-tech ml-8 rounded-md py-1 px-2 uppercase active:text-neon-blue hover:cursor-pointer inline-flex items-center "
+          class="bg-dark-green border border-neon-green text-neon-green text-md font-share-tech ml-8 rounded-md py-1 px-2 uppercase hover:cursor-pointer inline-flex items-center "
           onClick={handleOpen}
         >
           Sort By
@@ -82,7 +83,6 @@ const Characters = () => {
         </button>
         <Search setPage={setPage} setSearch={setSearch} />
       </div>
-
       {open ? (
         <Filter
           page={page}

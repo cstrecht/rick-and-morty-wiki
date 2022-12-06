@@ -14,7 +14,7 @@ const Filter = ({
   setSpecies,
 }) => {
   return (
-    <div className="text-neon-green pl-5 mt-2 font-share-tech">
+    <div className="text-neon-green pl-5 mt-2 font-share-tech bg-neon-blue bg-opacity-30">
       <div>
         <Status
           page={page}

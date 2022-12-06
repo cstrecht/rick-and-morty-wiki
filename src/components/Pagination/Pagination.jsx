@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 const Pagination = ({ page, info, setPage, data }) => {
   let pageChange = (data) => {
     setPage(data.selected + 1);
-    console.log(data.selected);
+    //console.log(data.selected);
   };
   return (
     <ReactPaginate
