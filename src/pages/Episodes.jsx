@@ -1,39 +1,53 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Pagination from "../components/Pagination/Pagination";
+import groupBy from "lodash/groupBy";
 
-const Episodes = ({ info }) => {
-  const [page, setPage] = useState(1);
-  const [episodes, setEpisodes] = useState([]);
+const BASE_URL = "https://rickandmortyapi.com/api";
+const Episodes = () => {
+  const [episodesPerSeason, setEpisodesPerSeason] = useState([]);
 
-  const api = `https://rickandmortyapi.com/api/episode?page=${page}`;
+  async function loadEpisodes() {
+    fetch(`${BASE_URL}/episode`)
+      .then((response) => {
+        if (response.ok) return response.json();
+        throw new Error("API error");
+      })
 
+      .then(({ results, info }) => {
+        const episodesPerSeason = groupBy(results, (ep) =>
+          ep.episode.substring(0, 3)
+        );
+        setEpisodesPerSeason(episodesPerSeason);
+
+        if (info.next !== null) {
+        } else {
+        }
+      })
+      .catch((error) => console.log(error));
+  }
+
+  //fetch data from API:
   useEffect(() => {
-    const getEpisodes = async () => {
-      const response = await fetch(api);
-      const data = await response.json();
-
-      setEpisodes(data.results);
-      //console.log(data.results);
-    };
-
-    getEpisodes();
-  }, [api]);
+    loadEpisodes();
+  }, []);
 
   return (
-    <div className="pt-12 px-20 text-lg w-fit text-eletric-green font-share-tech">
-      {episodes.map((episode, key) => (
-        <Link to={`${episode.id}`}>
-          <div className="flex pb-3 hover:text-neon-blue">
-            <span className="bg-neon-blue bg-opacity-30 px-3">
-              Episode {episode.id}
-            </span>{" "}
-            - {episode.name} ({episode.air_date})
+    <>
+      <div className="mx-auto text-center text-lg w-fit text-eletric-green font-share-tech">
+        {Object.keys(episodesPerSeason).map((season, key) => (
+          <div className="">
+            <h1 className="text-4xl pt-4">{season}</h1>
+            {episodesPerSeason[season].map((episode, index) => (
+              <>
+                <li className="hover:underline list-none">
+                  <Link to={`${episode.id}`}> {episode.name}</Link>
+                </li>
+              </>
+            ))}
           </div>
-        </Link>
-      ))}
-      <Pagination info={info} page={page} setPage={setPage} />
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 export default Episodes;
