@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import Pagination from "../components/Pagination/Pagination";
-import Card from "../components/Card/Card";
+import Card from "../components/Character/Card";
 import Filter from "../components/Filters/Filter";
 import Search from "../components/Search/Search";
 
@@ -29,6 +29,7 @@ const Characters = () => {
   var { info, results } = characters; //destructuring the info and results (comes with the api response) from the data! :D
   // The "data" variable will store the data from the API. "updateData" will change that data everytime we want.
 
+  //fix this
   useEffect(() => {
     const getCharacters = async () => {
       const response = await fetch(api).then((response) => response.json());

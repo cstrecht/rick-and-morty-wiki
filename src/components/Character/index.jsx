@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Episode from "./Episode";
+import { Link } from "react-router-dom";
 
 const BASE_URL = "https://rickandmortyapi.com/api";
 
-const CardDetails = () => {
+const Character = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
   async function loadCharacter() {
     fetch(`${BASE_URL}/character/${id}`)
@@ -19,7 +21,6 @@ const CardDetails = () => {
       .catch((error) => console.log(error));
   }
 
-  //fetch data from API:
   useEffect(() => {
     loadCharacter();
   }, []);
@@ -84,7 +85,15 @@ const CardDetails = () => {
                 Episodes participated:
                 <ul className="text-neon-green">
                   {character.episode.map(function (episode, key) {
-                    return <Episode key={key} apiUrl={episode} />;
+                    return (
+                      <Link to={`${episode.id}`}>
+                        <Episode
+                          className="hover:underline"
+                          key={key}
+                          apiUrl={episode}
+                        />
+                      </Link>
+                    );
                   })}
                 </ul>
               </p>
@@ -95,4 +104,4 @@ const CardDetails = () => {
     </div>
   );
 };
-export default CardDetails;
+export default Character;

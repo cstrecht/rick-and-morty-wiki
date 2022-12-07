@@ -18,7 +18,7 @@ const Episodes = () => {
           ep.episode.substring(0, 3)
         );
         setEpisodesPerSeason(episodesPerSeason);
-
+        // fix this
         if (info.next !== null) {
         } else {
         }

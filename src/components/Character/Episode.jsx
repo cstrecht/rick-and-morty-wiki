@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Episode = ({ apiUrl }) => {
   const [episode, setEpisode] = useState({});
@@ -18,9 +19,9 @@ const Episode = ({ apiUrl }) => {
   }, []);
 
   return (
-    <>
+    <Link to={`/episodes/${episode.id}`}>
       <li>{episode.name}</li>
-    </>
+    </Link>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 
 import hero from "../assets/hero.png";
 
-const Hero = () => {
+const Home = () => {
   return (
     <div className="text-eletric-green tracking-widest">
       <div className="text-eletric-green font-share-tech uppercase text-5xl text-center">
@@ -20,4 +20,4 @@ const Hero = () => {
     </div>
   );
 };
-export default Hero;
+export default Home;

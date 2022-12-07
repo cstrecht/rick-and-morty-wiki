@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// WTF do I do with this...
 const Card = ({ page, results }) => {
   let display;
 
   if (results) {
-    display = results.map((x) => {
-      let { id, image, name, status, location, species } = x;
+    display = results.map((cardInfo) => {
+      let { id, image, name, status, location, species } = cardInfo;
       return (
         <Link to={`${page}/${id}`}>
           <div key={id}>

@@ -7,9 +7,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Episodes from "./pages/Episodes";
 import About from "./pages/About";
 import Characters from "./pages/Characters";
-import Hero from "./pages/Hero";
-import CardDetails from "./components/Card/CardDetails";
-import EpisodeDetails from "./components/Episodes/EpisodeDetails";
+import Hero from "./pages/Home";
+import Character from "./components/Character";
+import Episode from "./components/Episode";
 
 function App() {
   return (
@@ -21,10 +21,10 @@ function App() {
         <Route path="/" element={<Hero />} />
 
         <Route path="/characters" element={<Characters />} />
-        <Route path="/characters/:id" element={<CardDetails />} />
+        <Route path="/characters/:id" element={<Character />} />
 
         <Route path="/episodes" element={<Episodes />} />
-        <Route path="/episodes/:id" element={<EpisodeDetails />} />
+        <Route path="/episodes/:id" element={<Episode />} />
 
         <Route path="/about" element={<About />} />
       </Routes>
