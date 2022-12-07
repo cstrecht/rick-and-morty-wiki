@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import Pagination from "../components/Pagination/Pagination";
-
 import Card from "../components/Card/Card";
 import Filter from "../components/Filters/Filter";
 import Search from "../components/Search/Search";
-// import FiltersDropdown from "../components/Card/FiltersDrpdown";
 
 const Characters = () => {
   // -- Search feature: --

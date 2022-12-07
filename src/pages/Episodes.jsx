@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-//import Pagination from "../components/Pagination/Pagination"; FIX THIS LATER, not working properly :(
+import Pagination from "../components/Pagination/Pagination";
 
-const Episodes = ({ page, setPage, info, id }) => {
+const Episodes = ({ info }) => {
+  const [page, setPage] = useState(1);
   const [episodes, setEpisodes] = useState([]);
+
   const api = `https://rickandmortyapi.com/api/episode?page=${page}`;
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const Episodes = ({ page, setPage, info, id }) => {
           </div>
         </Link>
       ))}
-      {/* <Pagination info={info} page={page} setPage={setPage} /> */}
+      <Pagination info={info} page={page} setPage={setPage} />
     </div>
   );
 };

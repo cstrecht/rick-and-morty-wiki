@@ -22,7 +22,7 @@ const About = () => {
       <br />
       <br />
       <p className="text-lg pt-8">
-        coded with <span className="text-neon-purple">♥</span> by{" "}
+        made with <span className="text-neon-purple">♥</span> by{" "}
         <a
           href="https://github.com/cstrecht"
           className="underline hover:text-neon-blue"
