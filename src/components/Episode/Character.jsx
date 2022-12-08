@@ -20,7 +20,7 @@ const Character = ({ apiUrl }) => {
   }, []);
 
   return (
-    <Link to={`/characters/${character.id}`}>
+    <Link to={`/character/${character.id}`}>
       <li>{character.name}</li>
     </Link>
   );

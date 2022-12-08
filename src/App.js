@@ -20,11 +20,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Hero />} />
 
-        <Route path="/characters" element={<Characters />} />
-        <Route path="/characters/:id" element={<Character />} />
+        <Route path="/character" element={<Characters />} />
+        <Route path="/character/:id" element={<Character />} />
 
-        <Route path="/episodes" element={<Episodes />} />
-        <Route path="/episodes/:id" element={<Episode />} />
+        <Route path="/episode" element={<Episodes />} />
+        <Route path="/episode/:id" element={<Episode />} />
 
         <Route path="/about" element={<About />} />
       </Routes>

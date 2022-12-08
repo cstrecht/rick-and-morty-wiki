@@ -1,8 +1,8 @@
 import React from "react";
 
-function Search({ setPage, setSearch }) {
+function Search({ setSearch, setPage }) {
   return (
-    <div className="bg-dark-green border border-neon-green text-neon-green text-md font-share-tech ml-8 rounded-md py-1 px-2 uppercase">
+    <div className="bg-dark-green border w-fit border-neon-green text-neon-green text-md font-share-tech ml-8 rounded-md py-1 px-2 uppercase">
       <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pb-0"></div>
       <input
         onChange={(e) => {

@@ -41,14 +41,14 @@ function Navbar({ setPage, setSearch }) {
         </Link>
         <div className="flex tracking-wide font-share-tech uppercase">
           <Link
-            to="/characters"
+            to="/character"
             className="text-neon-green mx-12 pt-1 px-2 hover:bg-neon-green hover:text-black hover:cursor-pointer"
           >
             Characters
           </Link>
 
           <Link
-            to="/episodes"
+            to="/episode"
             className="text-neon-green mx-12 pt-1 px-2 hover:bg-neon-green hover:text-black hover:cursor-pointer"
           >
             Episodes
@@ -59,13 +59,6 @@ function Navbar({ setPage, setSearch }) {
           >
             About
           </Link>
-
-          {/* <Sidebar
-            showSidebar={showSidebar}
-            setShowSidebar={setShowSidebar}
-            onClick={() => setShowSidebar(!showSidebar)}
-          /> */}
-          {/* <Search setPage={setPage} setSearch={setSearch} /> */}
         </div>
       </div>
     </nav>
