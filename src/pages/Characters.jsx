@@ -9,14 +9,20 @@ const BASE_URL = "https://rickandmortyapi.com/api";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
-
   //Search bar:
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
+
   //Filters:
   const [status, setStatus] = useState("");
   const [gender, setGender] = useState("");
   const [species, setSpecies] = useState("");
+
+  //Dropdown (Sort By button):
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(!open);
+  };
 
   async function loadCharacters() {
     fetch(
@@ -40,13 +46,59 @@ const Characters = () => {
   return (
     <>
       <div>
-        <Search setPage={setPage} setSearch={setSearch} />
-        <Filter
-          setStatus={setStatus}
-          setGender={setGender}
-          setSpecies={setSpecies}
-          setPage={setPage}
-        />
+        <div className="flex mb-2 mx-auto">
+          <button
+            class="bg-dark-green border border-neon-green text-neon-green text-md font-share-tech ml-8 rounded-md py-1 px-2 uppercase hover:cursor-pointer inline-flex items-center "
+            onClick={handleOpen}
+          >
+            Sort By
+            {open ? (
+              <svg
+                aria-hidden="true"
+                class="ml-2 w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            ) : (
+              <svg
+                aria-hidden="true"
+                class="ml-2 w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            )}
+          </button>
+
+          <Search setPage={setPage} setSearch={setSearch} />
+        </div>
+        {open ? (
+          <Filter
+            setStatus={setStatus}
+            setGender={setGender}
+            setSpecies={setSpecies}
+            setPage={setPage}
+          />
+        ) : (
+          ""
+        )}
       </div>
       {characters.length === 0 && (
         <div className="text-neon-blue text-center font-share-tech">

@@ -44,10 +44,10 @@ const Filter = ({ setGender, setStatus, setSpecies, setPage }) => {
   ];
 
   return (
-    <div className="text-eletric-green">
+    <div className="text-eletric-green font-share-tech pl-5 bg-neon-blue bg-opacity-25 mb-2">
       <div className="pl-5">
         <p>Gender:</p>
-        <div className="">
+        <div className="pl-5">
           {gender.map((item, index) => (
             <Button
               key={index}
@@ -62,7 +62,7 @@ const Filter = ({ setGender, setStatus, setSpecies, setPage }) => {
       </div>
       <div className="pl-5">
         <p>Status:</p>
-        <div>
+        <div className="pl-5">
           {status.map((item, index) => (
             <Button
               key={index}
@@ -77,7 +77,7 @@ const Filter = ({ setGender, setStatus, setSpecies, setPage }) => {
       </div>
       <div className="pl-5">
         <p>Species:</p>
-        <div className="">
+        <div className="pl-5">
           {species.map((item, index) => (
             <Button
               key={index}
