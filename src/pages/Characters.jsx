@@ -46,9 +46,9 @@ const Characters = () => {
   return (
     <>
       <div>
-        <div className="flex mb-2 mx-auto">
+        <div className="flex my-6">
           <button
-            class="bg-dark-green border border-neon-green text-neon-green text-md font-share-tech ml-8 rounded-md py-1 px-2 uppercase hover:cursor-pointer inline-flex items-center "
+            class="text-neon-blue rounded-lg bg-neon-blue bg-opacity-10 border border-x-neon-blue text-md font-share-tech ml-3 sm:ml-8 px-2 uppercase hover:cursor-pointer inline-flex items-center text-sm sm:text-base"
             onClick={handleOpen}
           >
             Sort By
@@ -106,20 +106,20 @@ const Characters = () => {
         </div>
       )}
       {characters.length !== 0 && (
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {characters.map((character, key) => (
             <Link key={character.id} to={`${character.id}`}>
-              <div className="w-60 h-[385px] mb-8 mx-auto bg-dark-green overflow-hidden text-eletric-green font-share-tech shadow-lg tracking-wide">
+              <div className="w-44 sm:w-60 h-auto sm:h-[395px] mb-8 mx-auto bg-neon-blue bg-opacity-20 rounded-xl text-neon-green font-share-tech shadow-lg tracking-wide hover:-translate-y-1 hover:scale-105 transition ease-in-out">
                 <img
-                  className="w-60"
+                  className="w-44 rounded-t-lg sm:w-60"
                   src={character.image}
                   alt="Character face"
                 />
-                <div className="px-2 pt-2 pb-3 text-xl uppercase">
+                <div className="px-2 py-2 text-base sm:text-lg uppercase">
                   {character.name}
                 </div>
-                <div className="px-2 pb-2">
-                  <span className="inline-block text-xs font-semibold text-gray-700">
+                <div className="px-2">
+                  <span className="inline-block text-xs sm:text-sm font-semibold text-gray-700">
                     STATUS:{" "}
                     {character.status === "Dead" ? (
                       <span className="line-through">{character.status}</span>
@@ -128,10 +128,11 @@ const Characters = () => {
                     )}
                   </span>
                   <br />
-                  <span className="inline-block text-xs font-semibold text-gray-700">
+                  <span className="inline-block text-xs sm:text-sm font-semibold text-gray-700">
                     SPECIES: {character.species}
                   </span>
-                  <span className="inline-block text-xs font-semibold text-gray-700">
+                  <br />
+                  <span className="inline-block text-xs sm:text-sm font-semibold text-gray-700">
                     FROM: {character.location.name}
                   </span>
                 </div>

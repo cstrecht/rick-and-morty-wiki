@@ -1,24 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Button = ({ input, task, setPage, index, name }) => {
-  const [isActive, setIsActive] = useState(false);
-
   const handleClick = () => {
     task(input);
     setPage(1);
-    setIsActive((current) => !current);
   };
-  // the buttons color is not changing idk why :/
   return (
     <>
       <input type="button" name={name} id={`${name}-${index}`} />
       <label
         onClick={handleClick}
-        className={
-          isActive === true
-            ? "mr-4 px-4 text-xs text-eletric-green bg-neon-purple hover:cursor-pointer"
-            : "mr-4 px-4 text-xs text-eletric-green bg-dark-green hover:cursor-pointer"
-        }
+        className=" mr-4 px-4 text-xs text-black bg-neon-green bg-opacity-80 rounded-lg py-1 hover:bg-neon-blue hover:text-white hover:cursor-pointer"
         for={`${name}-${index}`}
       >
         {input}
@@ -44,10 +36,10 @@ const Filter = ({ setGender, setStatus, setSpecies, setPage }) => {
   ];
 
   return (
-    <div className="text-eletric-green font-share-tech pl-5 bg-neon-blue bg-opacity-25 mb-2">
+    <div className="text-neon-blue font-share-tech pl-5 bg-black mb-4 py-1">
       <div className="pl-5">
         <p>Gender:</p>
-        <div className="pl-5">
+        <div>
           {gender.map((item, index) => (
             <Button
               key={index}
@@ -56,13 +48,14 @@ const Filter = ({ setGender, setStatus, setSpecies, setPage }) => {
               task={setGender}
               updatePageNumber={setPage}
               input={item}
+              className="mr-4 px-4 text-xs text-black bg-neon-green bg-opacity-80 rounded-lg py-1 hover:bg-neon-blue hover:text-white hover:cursor-pointer"
             />
           ))}
         </div>
       </div>
       <div className="pl-5">
         <p>Status:</p>
-        <div className="pl-5">
+        <div>
           {status.map((item, index) => (
             <Button
               key={index}
@@ -77,7 +70,7 @@ const Filter = ({ setGender, setStatus, setSpecies, setPage }) => {
       </div>
       <div className="pl-5">
         <p>Species:</p>
-        <div className="pl-5">
+        <div>
           {species.map((item, index) => (
             <Button
               key={index}
