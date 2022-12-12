@@ -34,7 +34,7 @@ const Episode = () => {
       </button>
 
       {episode && (
-        <div className="mx-auto bg-neon-blue bg-opacity-30 rounded-xl w-96 border-8 border-neon-green mt-3">
+        <div className="mx-auto bg-neon-blue bg-opacity-30 rounded-xl w-fit sm:w-96 border-8 border-neon-green mt-3">
           <div className="bg-neon-green text-center text-xl sm:text-3xl py-2 tracking-widest">
             {"Ep." + episode.id + " - " + episode.name}
           </div>
