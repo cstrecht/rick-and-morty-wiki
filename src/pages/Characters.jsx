@@ -143,26 +143,26 @@ const Characters = () => {
       )}
 
       <ReactPaginate
-        nextLabel={"►"}
-        previousLabel={"◄"}
+        nextLabel={" ► "}
+        previousLabel={" ◄ "}
         breakLabel={"..."}
         pageCount={42}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={3}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={1}
         onPageChange={({ selected }) => setPage(selected + 1)}
         containerClassName={
-          "flex justify-center font-share-tech my-4 text-eletric-green hover:cursor-pointer"
+          "flex justify-center font-share-tech my-4 text-neon-blue sm:text-lg hover:cursor-pointer"
         }
-        pageClassName={
-          "px-3 py-2 leading-tight bg-dark-green border hover:underline"
+        pageLinkClassName={
+          "px-3 py-2 leading-tight bg-black border border-neon-blue sm:text-lg hover:underline"
         }
-        previousClassName={
-          "px-3 py-2 leading-tight bg-dark-green border rounded-l-lg hover:underline"
+        previousLinkClassName={
+          "px-3 py-2 leading-tight bg-black border rounded-l-lg sm:text-lg hover:underline"
         }
-        nextClassName={
-          "px-3 py-2 leading-tight bg-dark-green border rounded-r-lg hover:underline"
+        nextLinkClassName={
+          "px-3 py-2 leading-tight bg-black border rounded-r-lg hover:underline"
         }
-        activeClassName={"bg-eletric-green text-black border-none"}
+        activeLinkClassName={"text-neon-green border border-neon-green"}
       />
     </>
   );

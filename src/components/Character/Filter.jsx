@@ -10,7 +10,7 @@ const Button = ({ input, task, setPage, index, name }) => {
       <input type="button" name={name} id={`${name}-${index}`} />
       <label
         onClick={handleClick}
-        className=" mr-4 px-4 text-xs text-black bg-neon-green bg-opacity-80 rounded-lg py-1 hover:bg-neon-blue hover:text-white hover:cursor-pointer"
+        className="mr-4 px-4 text-xs text-black bg-neon-green bg-opacity-80 rounded-lg py-1 hover:bg-neon-blue hover:text-white hover:cursor-pointer"
         for={`${name}-${index}`}
       >
         {input}
