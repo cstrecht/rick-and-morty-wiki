@@ -20,7 +20,9 @@ const Episode = ({ apiUrl }) => {
 
   return (
     <Link to={`/episode/${episode.id}`}>
-      <li>{episode.name}</li>
+      <li className="underline text-neon-green pb-1 hover:text-white">
+        Ep.{episode.id} {episode.name}
+      </li>
     </Link>
   );
 };

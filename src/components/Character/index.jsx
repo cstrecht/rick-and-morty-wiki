@@ -9,7 +9,6 @@ const Character = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
-  const [showMore, setShowMore] = useState(false);
 
   async function loadCharacter() {
     fetch(`${BASE_URL}/character/${id}`)
@@ -29,20 +28,24 @@ const Character = () => {
     <div className="font-share-tech py-4 px-8 overflow-hidden">
       <button
         onClick={() => navigate(-1)}
-        className="bg-dark-green border border-neon-green text-neon-green text-md font-share-tech rounded-md py-1 px-2 uppercase active:text-white hover:cursor-pointer hover:underline"
+        className="bg-dark-green bg-opacity-50 border border-neon-green rounded text-neon-green text-sm font-share-tech py-1 px-8 uppercase active:text-white hover:cursor-pointer hover:underline"
       >
-        ← go back
+        ← back
       </button>
       {character && (
-        <div className=" mx-auto  bg-neon-blue bg-opacity-30 w-fit rounded-xl border-8 border-neon-green mt-3">
-          <h1 className="bg-neon-green text-center text-4xl py-2">
+        <div className="mx-auto bg-neon-blue bg-opacity-30 w-fit rounded-xl border-8 border-neon-green mt-3">
+          <h1 className="bg-neon-green text-center text-xl sm:text-3xl py-2 tracking-widest">
             Character ID
           </h1>
-          <div className="flex">
+          <div className="md:flex">
             <div>
-              <img src={character.image} alt="character face" />
+              <img
+                src={character.image}
+                alt="Characters face"
+                className="h-60 mx-auto rounded-full px-4 mt-5 md:mr-0"
+              />
             </div>
-            <div className="p-4 text-xl tracking-wide text-neon-blue">
+            <div className="m-6 leading-6 sm:leading-0 text-sm sm:text-base tracking-wide text-white">
               <h1>
                 Name: <span className="text-neon-green">{character.name}</span>
               </h1>
@@ -57,7 +60,7 @@ const Character = () => {
                 </span>
               </p>
               <p>
-                Origin:
+                Origin:{" "}
                 <span className="text-neon-green">
                   {character.origin?.name}
                 </span>
@@ -71,27 +74,26 @@ const Character = () => {
                 <span className="text-neon-green">{character.species}</span>
               </p>
               <p>
-                Subspecies:
+                Subspecies:{" "}
                 <span className="text-neon-green">
-                  {character.type || "No subspecies"}
+                  {character.type || "None"}
                 </span>
               </p>
               <p>
-                Created at{" "}
-                <span className="text-neon-green"> {character.created}</span>
+                Created at:{" "}
+                <span className="text-neon-green">
+                  {" "}
+                  {character.created.substring(0, 10)}
+                </span>
               </p>
 
               <p>
-                Episodes participated:
-                <ul className="text-neon-green">
+                Episodes participated:{" "}
+                <ul>
                   {character.episode.map(function (episode, key) {
                     return (
                       <Link to={`${episode.id}`}>
-                        <Episode
-                          className="hover:underline"
-                          key={key}
-                          apiUrl={episode}
-                        />
+                        <Episode key={key} apiUrl={episode} />
                       </Link>
                     );
                   })}
