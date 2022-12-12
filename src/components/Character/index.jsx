@@ -45,7 +45,7 @@ const Character = () => {
                 className="h-60 mx-auto rounded-full px-4 mt-5 md:mr-0"
               />
             </div>
-            <div className="m-6 leading-6 sm:leading-0 text-base tracking-wide text-white">
+            <div className="m-6 leading-6 sm:leading-0 text-lg sm:text-base tracking-wide text-white">
               <h1>
                 Name: <span className="text-neon-green">{character.name}</span>
               </h1>
