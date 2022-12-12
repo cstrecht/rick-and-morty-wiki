@@ -3,33 +3,47 @@ import heroAbout from "../assets/heroAbout.png";
 
 const About = () => {
   return (
-    <div className="text-eletric-green pt-12 px-20 font-share-tech leading-loose">
-      <img
-        className="mx-auto bottom-0 right-0 absolute h-96"
-        src={heroAbout}
-        alt="hero"
-      />
-      <p className="w-4/5">
-        "Rick and Morty is an American adult animated science-fiction sitcom
-        created by Justin Roiland and Dan Harmon for Cartoon Network's nighttime
-        programming block Adult Swim. The series follows the misadventures of
-        cynical mad scientist Rick Sanchez and his grandson Morty Smith, who
-        split their time between domestic life and interdimensional adventures.
-        The general concept of Rick and Morty relies on two conflicting
-        scenarios: domestic family drama, and an alcoholic grandfather dragging
-        his grandson into hijinks."
-      </p>
-      <br />
-      <br />
-      <p className="text-lg pt-8">
-        made with <span className="text-neon-purple">♥</span> by{" "}
-        <a
-          href="https://github.com/cstrecht"
-          className="underline hover:text-neon-blue"
-        >
-          carolina
-        </a>
-      </p>
+    <div className="sm:flex sm:flex-inline text-neon-blue px-8 py-3 sm:p-8 sm:pt-12 sm:px-20 font-share-tech">
+      <div>
+        <img
+          className="hidden sm:flex bottom-0 right-0 md:h-96"
+          src={heroAbout}
+          alt="hero"
+        />
+      </div>
+
+      <div className="flex flex-col">
+        <p className="w-fit sm:w-[700px] text-xs sm:text-base pb-4 sm:leading-8 text-center sm:text-right bg-black bg-opacity-70">
+          <span className="text-xl sm:text-3xl">"Rick and Morty</span> is an
+          American adult animated science-fiction sitcom created by Justin
+          Roiland and Dan Harmon for Cartoon Network's nighttime programming
+          block <span className="text-xl sm:text-3xl">Adult Swim.</span> The
+          series follows the misadventures of cynical mad scientist{" "}
+          <span className="text-xl sm:text-3xl">Rick Sanchez</span>and his
+          grandson <span className="text-xl sm:text-3xl">Morty Smith</span>, who
+          split their time between domestic life and{" "}
+          <span className="text-xl sm:text-3xl">interdimensional</span>{" "}
+          adventures. The general concept of Rick and Morty relies on two{" "}
+          <span className="text-xl sm:text-3xl">conflicting scenarios:</span>
+          domestic family drama, and a crazy grandfather dragging his grandson
+          into hijinks"
+        </p>
+        <br />
+        <p className="text-lg text-center sm:text-right sm:pt-8 text-neon-green">
+          made with <span className="text-neon-purple">♥</span> by{" "}
+          <a
+            href="https://github.com/cstrecht"
+            className="underline hover:text-neon-blue"
+          >
+            carolina
+          </a>
+          <p className="text-xs">This app is imaginary and unofficial.</p>
+        </p>
+
+        <div>
+          <img className="sm:hidden mx-auto h-36" src={heroAbout} alt="hero" />
+        </div>
+      </div>
     </div>
   );
 };
