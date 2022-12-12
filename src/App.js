@@ -2,23 +2,22 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-// -- React Components: --
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import Episodes from "./pages/Episodes";
 import About from "./pages/About";
 import Characters from "./pages/Characters";
-import Hero from "./pages/Home";
+import Home from "./pages/Home";
 import Character from "./components/Character";
 import Episode from "./components/Episode";
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div>
         <Navbar />
       </div>
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Home />} />
 
         <Route path="/character" element={<Characters />} />
         <Route path="/character/:id" element={<Character />} />

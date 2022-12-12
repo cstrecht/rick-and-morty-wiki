@@ -2,33 +2,36 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import groupBy from "lodash/groupBy";
 
-const BASE_URL = "https://rickandmortyapi.com/api";
+const EPISODES_URL = "https://rickandmortyapi.com/api/episode";
+
 const Episodes = () => {
+  const [episodes, setEpisodes] = useState([]);
   const [episodesPerSeason, setEpisodesPerSeason] = useState([]);
 
-  async function loadEpisodes() {
-    fetch(`${BASE_URL}/episode`)
+  async function loadEpisodes(url) {
+    fetch(url)
       .then((response) => {
         if (response.ok) return response.json();
         throw new Error("API error");
       })
-
       .then(({ results, info }) => {
-        const episodesPerSeason = groupBy(results, (ep) =>
-          ep.episode.substring(0, 3)
-        );
+        setEpisodes((prevState) => [...prevState, ...results]);
 
-        setEpisodesPerSeason(episodesPerSeason);
-        // FINISH THIS: SHOW ALL SEASONS IN ONE PAGE
-        if (info.next !== null) {
+        if (info.next === null) {
+          const episodesPerSeason = groupBy(episodes, (ep) =>
+            ep.episode.substring(0, 3)
+          );
+
+          setEpisodesPerSeason(episodesPerSeason);
         } else {
+          loadEpisodes(info.next);
         }
       })
       .catch((error) => console.log(error));
   }
 
   useEffect(() => {
-    loadEpisodes();
+    loadEpisodes(EPISODES_URL);
   }, []);
 
   return (
@@ -37,23 +40,12 @@ const Episodes = () => {
         {Object.keys(episodesPerSeason).map((season, key) => (
           <div className="pt-4">
             <h1 className="text-xl sm:text-4xl py-1 text-center text-neon-blue rounded bg-neon-green bg-opacity-20">
-              {season === "S01"
-                ? "Season 1"
-                : season === "S02"
-                ? "Season 2"
-                : season === "S03"
-                ? "Season 3"
-                : season === "S04"
-                ? "Season 4"
-                : season === "S05"
-                ? "Season 5"
-                : null}
+              {"Season " + season[2]}
             </h1>
             {episodesPerSeason[season].map((episode, index) => (
               <>
                 <li className="text-base pl-4 py-2 sm:py-0 sm:text-xl hover:underline list-none">
                   <Link to={`${episode.id}`}>
-                    {" "}
                     {episode.id}. {episode.name}
                   </Link>
                 </li>
