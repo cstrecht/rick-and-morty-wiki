@@ -17,6 +17,7 @@ const Episodes = () => {
         const episodesPerSeason = groupBy(results, (ep) =>
           ep.episode.substring(0, 3)
         );
+
         setEpisodesPerSeason(episodesPerSeason);
         // fix this
         if (info.next !== null) {
@@ -33,14 +34,29 @@ const Episodes = () => {
 
   return (
     <>
-      <div className="mx-auto text-center text-lg w-fit text-eletric-green font-share-tech">
+      <div className="mx-auto text-left text-lg w-fit text-eletric-green font-share-tech">
         {Object.keys(episodesPerSeason).map((season, key) => (
-          <div className="">
-            <h1 className="text-4xl pt-4">{season}</h1>
+          <div className="pt-4">
+            <h1 className="text-xl sm:text-4xl py-1 text-center text-neon-blue rounded bg-neon-green bg-opacity-20">
+              {season === "S01"
+                ? "Season 1"
+                : season === "S02"
+                ? "Season 2"
+                : season === "S03"
+                ? "Season 3"
+                : season === "S04"
+                ? "Season 4"
+                : season === "S05"
+                ? "Season 5"
+                : null}
+            </h1>
             {episodesPerSeason[season].map((episode, index) => (
               <>
-                <li className="hover:underline list-none">
-                  <Link to={`${episode.id}`}> {episode.name}</Link>
+                <li className="text-base pl-4 py-2 sm:py-0 sm:text-xl hover:underline list-none">
+                  <Link to={`${episode.id}`}>
+                    {" "}
+                    {episode.id}. {episode.name}
+                  </Link>
                 </li>
               </>
             ))}
