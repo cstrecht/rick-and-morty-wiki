@@ -37,7 +37,8 @@ const About = () => {
           >
             carolina
           </a>
-          <p className="text-xs">This app is imaginary and unofficial.</p>
+          <br />
+          <span className="text-xs">This app is imaginary and unofficial.</span>
         </p>
 
         <div>

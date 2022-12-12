@@ -1,30 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import Search from "../Search/Search";
 import logo from "../../assets/logo.png";
-// import Sidebar from "../Sidebar/Sidebar";
 
-function Navbar({ setPage, setSearch }) {
-  // const [showSidebar, setShowSidebar] = useState(false);
-  // scroll
-
+function Navbar({ setPage }) {
   function refreshPage() {
     setPage(1);
     window.location.reload(false);
   }
 
-  var prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
-    var currentScrollPos = window.pageYOffset;
-
-    //console.log(currentScrollPos);
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").style.top = "-180px";
-    }
-    prevScrollpos = currentScrollPos;
-  };
   return (
     <nav
       id="navbar"

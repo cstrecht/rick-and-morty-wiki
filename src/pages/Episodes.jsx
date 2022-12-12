@@ -19,7 +19,7 @@ const Episodes = () => {
         );
 
         setEpisodesPerSeason(episodesPerSeason);
-        // fix this
+        // FINISH THIS: SHOW ALL SEASONS IN ONE PAGE
         if (info.next !== null) {
         } else {
         }
@@ -27,7 +27,6 @@ const Episodes = () => {
       .catch((error) => console.log(error));
   }
 
-  //fetch data from API:
   useEffect(() => {
     loadEpisodes();
   }, []);

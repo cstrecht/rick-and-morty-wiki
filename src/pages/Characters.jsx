@@ -30,7 +30,6 @@ const Characters = () => {
     )
       .then((response) => {
         if (response.ok) return response.json();
-
         throw new Error("API error");
       })
       .then(({ results, info }) => {
@@ -48,39 +47,39 @@ const Characters = () => {
       <div>
         <div className="flex my-6">
           <button
-            class="text-neon-blue rounded-lg bg-neon-blue bg-opacity-10 border border-x-neon-blue text-md font-share-tech ml-3 sm:ml-8 px-2 uppercase hover:cursor-pointer inline-flex items-center text-sm sm:text-base"
+            className="text-neon-blue rounded-lg bg-neon-blue bg-opacity-10 border border-x-neon-blue text-md font-share-tech ml-3 sm:ml-8 px-2 uppercase hover:cursor-pointer inline-flex items-center text-sm sm:text-base"
             onClick={handleOpen}
           >
             Sort By
             {open ? (
               <svg
                 aria-hidden="true"
-                class="ml-2 w-4 h-4"
+                className="ml-2 w-4 h-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M19 9l-7 7-7-7"
                 ></path>
               </svg>
             ) : (
               <svg
                 aria-hidden="true"
-                class="ml-2 w-4 h-4"
+                className="ml-2 w-4 h-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4.5 15.75l7.5-7.5 7.5 7.5"
                 />
               </svg>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-//Fill the characters that participated in that episode
 const Character = ({ apiUrl }) => {
   const [character, setCharacter] = useState({});
 
