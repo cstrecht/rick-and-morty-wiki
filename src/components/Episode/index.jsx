@@ -28,17 +28,17 @@ const Episode = () => {
     <div className="font-share-tech py-4 px-8 overflow-hidden">
       <button
         onClick={() => navigate(-1)}
-        className="bg-dark-green border border-neon-green text-neon-green text-md font-share-tech rounded-md py-1 px-2 uppercase active:text-white hover:cursor-pointer hover:underline"
+        className="bg-dark-green bg-opacity-50 border border-neon-green rounded text-neon-green text-sm font-share-tech py-1 px-8 uppercase active:text-white hover:cursor-pointer hover:underline"
       >
-        ← go back
+        ← back
       </button>
 
       {episode && (
-        <div className="mx-auto max-w-xl  text-eletric-green bg-neon-blue bg-opacity-40 rounded-xl border-8 border-neon-green mt-3">
-          <div className="bg-neon-green text-center text-4xl p-5 text-black">
-            {episode.name + " - Episode " + episode.id}
+        <div className="mx-auto bg-neon-blue bg-opacity-30 rounded-xl w-96 border-8 border-neon-green mt-3">
+          <div className="bg-neon-green text-center text-xl sm:text-3xl py-2 tracking-widest">
+            {"Ep." + episode.id + " - " + episode.name}
           </div>
-          <div className="p-6 tracking-wide text-xl text-neon-blue">
+          <div className="m-6 leading-6 sm:leading-0 text-lg sm:text-base tracking-wide text-white">
             <div>
               Air dated:{" "}
               <span className="text-neon-green">{episode.air_date}</span>
@@ -53,7 +53,7 @@ const Episode = () => {
             </div>
             <div>
               Participating characters:
-              <ul className="text-neon-green">
+              <ul>
                 {episode.characters.map((character, key) => (
                   <Character key={key} apiUrl={character} />
                 ))}

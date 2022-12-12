@@ -21,7 +21,9 @@ const Character = ({ apiUrl }) => {
 
   return (
     <Link to={`/character/${character.id}`}>
-      <li>{character.name}</li>
+      <li className="underline text-neon-green pb-1 hover:text-white">
+        {character.name}
+      </li>
     </Link>
   );
 };
