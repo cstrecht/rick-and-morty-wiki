@@ -26,5 +26,4 @@ const Episode = ({ apiUrl }) => {
     </Link>
   );
 };
-
 export default Episode;

@@ -6,7 +6,7 @@ function Search({ setSearch, setPage }) {
       <input
         onChange={(e) => {
           setPage(1);
-          setSearch(e.target.value);
+          setSearch(e.target.value.toLowerCase().replace(/\s/g, ""));
         }}
         type="text"
         placeholder="Search character..."

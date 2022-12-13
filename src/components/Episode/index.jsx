@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Character from "./Character";
-import { Link } from "react-router-dom";
 
 const BASE_URL = "https://rickandmortyapi.com/api";
 
@@ -34,7 +33,7 @@ const Episode = () => {
       </button>
 
       {episode && (
-        <div className="mx-auto bg-neon-blue bg-opacity-30 rounded-xl w-fit sm:w-96 border-8 border-neon-green mt-3">
+        <div className="mx-auto text-center bg-neon-blue bg-opacity-30 rounded-xl w-fit sm:w-96 border-8 border-neon-green mt-3">
           <div className="bg-neon-green text-center text-xl sm:text-3xl py-2 tracking-widest">
             {"Ep." + episode.id + " - " + episode.name}
           </div>
@@ -49,7 +48,9 @@ const Episode = () => {
             </div>
             <div>
               Created at{" "}
-              <span className="text-neon-green">{episode.created}</span>
+              <span className="text-neon-green">
+                {episode.created.substring(0, 10)}
+              </span>
             </div>
             <div>
               Participating characters:

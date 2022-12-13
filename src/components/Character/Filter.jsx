@@ -23,16 +23,16 @@ const Filter = ({ setGender, setStatus, setSpecies, setPage }) => {
   var gender = ["Female", "Male", "Genderless", "Unknown"];
   var status = ["Alive", "Dead", "Unknown"];
   var species = [
-    "Human",
     "Alien",
-    "Humanoid",
-    "Poopybutthole",
-    "Mythological",
-    "Unknown",
     "Animal",
-    "Disease",
-    "Robot",
     "Cronenberg",
+    "Disease",
+    "Human",
+    "Humanoid",
+    "Mythological",
+    "Poopybutthole",
+    "Robot",
+    "Unknown",
   ];
 
   return (
@@ -42,13 +42,13 @@ const Filter = ({ setGender, setStatus, setSpecies, setPage }) => {
         <div>
           {gender.map((item, index) => (
             <Button
-              key={index}
+              className="mr-4 px-4 text-xs text-black bg-neon-green bg-opacity-80 rounded-lg py-1 hover:bg-neon-blue hover:text-white hover:cursor-pointer"
               index={index}
+              input={item}
+              key={index}
               name="status"
               task={setGender}
               updatePageNumber={setPage}
-              input={item}
-              className="mr-4 px-4 text-xs text-black bg-neon-green bg-opacity-80 rounded-lg py-1 hover:bg-neon-blue hover:text-white hover:cursor-pointer"
             />
           ))}
         </div>
@@ -58,12 +58,12 @@ const Filter = ({ setGender, setStatus, setSpecies, setPage }) => {
         <div>
           {status.map((item, index) => (
             <Button
-              key={index}
               index={index}
+              input={item}
+              key={index}
               name="status"
               task={setStatus}
               updatePageNumber={setPage}
-              input={item}
             />
           ))}
         </div>
@@ -73,12 +73,12 @@ const Filter = ({ setGender, setStatus, setSpecies, setPage }) => {
         <div>
           {species.map((item, index) => (
             <Button
-              key={index}
               index={index}
+              input={item}
+              key={index}
               name="status"
               task={setSpecies}
               updatePageNumber={setPage}
-              input={item}
             />
           ))}
         </div>

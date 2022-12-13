@@ -3,7 +3,7 @@ import heroAbout from "../assets/heroAbout.png";
 
 const About = () => {
   return (
-    <div className="sm:flex sm:flex-inline text-neon-blue px-8 py-3 sm:p-8 sm:pt-12 sm:px-20 font-share-tech">
+    <div className="sm:flex sm:flex-inline text-black px-8 py-3 sm:p-8 sm:pt-12 sm:px-20 font-share-tech">
       <div>
         <img
           className="hidden sm:flex bottom-0 right-0 md:h-96"
@@ -13,7 +13,7 @@ const About = () => {
       </div>
 
       <div className="flex flex-col">
-        <p className="w-fit sm:w-[700px] text-xs sm:text-base pb-4 sm:leading-8 text-center sm:text-right bg-black bg-opacity-70">
+        <p className="w-fit sm:w-[700px] text-xs sm:text-base pb-4 sm:leading-8 text-center sm:text-right bg-neon-green bg-opacity-60 p-2 rounded-md">
           <span className="text-xl sm:text-3xl">"Rick and Morty</span> is an
           American adult animated science-fiction sitcom created by Justin
           Roiland and Dan Harmon for Cartoon Network's nighttime programming
@@ -29,13 +29,13 @@ const About = () => {
           into hijinks"
         </p>
         <br />
-        <p className="text-lg text-center sm:text-right sm:pt-8 text-neon-green">
+        <p className="text-lg text-center sm:text-right sm:pt-4 text-neon-green">
           made with <span className="text-neon-purple">♥</span> by{" "}
           <a
             href="https://github.com/cstrecht"
             className="underline hover:text-neon-blue"
           >
-            carolina
+            carolina strecht
           </a>
           <br />
           <span className="text-xs">This app is imaginary and unofficial.</span>

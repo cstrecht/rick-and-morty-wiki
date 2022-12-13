@@ -8,7 +8,7 @@ const Home = () => {
         Wubba lubba dub-dub!
       </div>
       <img
-        className="h-96 sm:h-[450px] mx-auto -mt-4 sm:-mt-16 animate-wiggle"
+        className="h-96 sm:h-[520px] mx-auto -mt-4 sm:-mt-16 animate-wiggle"
         src={hero}
         alt="Green portal with Rick and Morty inside"
       />

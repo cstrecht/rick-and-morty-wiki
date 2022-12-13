@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
 import { Link } from "react-router-dom";
-import Search from "../components/Character/Search";
+import "../App.css";
 import Filter from "../components/Character/Filter";
 import ReactPaginate from "react-paginate";
+import Search from "../components/Character/Search";
 
 const BASE_URL = "https://rickandmortyapi.com/api";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
-  //Search bar:
+  //Search:
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
 
@@ -18,7 +18,7 @@ const Characters = () => {
   const [gender, setGender] = useState("");
   const [species, setSpecies] = useState("");
 
-  //Dropdown (Sort By button):
+  //Toogle "Sort by" button:
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(!open);
@@ -107,8 +107,11 @@ const Characters = () => {
       {characters.length !== 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {characters.map((character, key) => (
-            <Link key={character.id} to={`${character.id}`}>
-              <div className="w-44 sm:w-60 h-auto sm:h-[395px] mb-8 mx-auto bg-neon-blue bg-opacity-20 rounded-xl text-neon-green font-share-tech shadow-lg tracking-wide hover:-translate-y-1 hover:scale-105 transition ease-in-out">
+            <Link to={`${character.id}`}>
+              <div
+                key={character.id}
+                className="w-44 sm:w-60 h-auto sm:h-[395px] mb-8 mx-auto bg-neon-blue bg-opacity-20 rounded-xl text-neon-green font-share-tech shadow-lg tracking-wide hover:-translate-y-1 hover:scale-105 transition ease-in-out"
+              >
                 <img
                   className="w-44 rounded-t-lg sm:w-60"
                   src={character.image}

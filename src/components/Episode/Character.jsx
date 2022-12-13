@@ -26,5 +26,4 @@ const Character = ({ apiUrl }) => {
     </Link>
   );
 };
-
 export default Character;
